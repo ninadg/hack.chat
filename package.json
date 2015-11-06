@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "cd client/ && make",
+    "deploy": "gcloud preview app deploy app.yaml --promote"
   },
   "repository": {
     "type": "git",
@@ -29,5 +31,10 @@
   },
   "engines": {
     "node": ">=0.12.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.8.5",
+    "jade": "^1.11.0",
+    "less": "^2.5.3"
   }
 }
